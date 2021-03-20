@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% block content %}
+<section class="g-bg-gray-light-v5">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-10 bg-white mt-5 shadow-sm" style="padding: 50px;">
+                <header class="text-center mb-4">
+                    <h2 class="h2 color-black font-weight-600">Acceder</h2>
+                </header>
+                <form method="post" action="{% url 'login_user' %}">
+                    {% csrf_token %}
+                    {% if error %}
+                    <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">×</button>{{error}}
+                    </div>
+                    {% endif %}
+                    <div class="mb-4">
+                        <label for="username" class="font-weight-600 font-size-13">Username:</label>
+                        <input autofocus="true"
+                            class="form-control color-black bg-white bg-white--focus  rounded py-15 px-15" type="text"
+                            placeholder="Nombre usuario" name="username" value="">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="color-gray-dark-v2 font-weight-600 font-size-13">Password:</label>
+                        <input autofocus="true"
+                            class="form-control color-black bg-white bg-white--focus  rounded py-15 px-15"
+                            type="password" name="password" value="">
+                    </div>
+                    <div class="mb-4">
+                        <input class="btn btn-primary btn-lg mr-1 mb-1 w-100" type="submit" name="" value="Acceder">
+                    </div>
+                </form>
+                <footer class="text-center">
+                    <div class="mb-4">
+                        <a class="btn btn-danger btn-lg mr-1 mb-1 w-100" href="{% provider_login_url 'google' %}"> Login Con Google</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}
