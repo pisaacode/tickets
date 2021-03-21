@@ -11,7 +11,10 @@ Instalar las dependencias con
 ````
 pipenv install
 `````
-
+Actualizar los datos en el conf.json
+````
+vim conf/conf.json
+`````
 Ejecutar los migrations
 ````
 python manage.py migrate

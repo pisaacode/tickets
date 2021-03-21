@@ -8,6 +8,6 @@ def home(request):
     return render(request, 'usuarios/login.html', {})
 
 
-@login_required
+#@login_required
 def dashboard(request):
     return render(request, 'base_angular.html', {})
