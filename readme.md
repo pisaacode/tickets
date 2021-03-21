@@ -26,4 +26,4 @@ python manage.py test apps/soporte/tests
 `````
 
 ### Proyecto de angular se encuntra en el siguiente link
-
+https://github.com/pisaacode/ticketfront
