@@ -11,7 +11,7 @@ def user_login(request):
         error = {}
         if user:
             login(request, user)
-            return redirect('listado_ticket')
+            return redirect('dashboard')
         else:
             error = 'Datos incorrectos intente de nuevo'
 

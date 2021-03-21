@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
 from django.views.generic import TemplateView
-from apps.public.views import home
+from apps.public.views import home, dashboard
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^ticket/', include('apps.soporte.urls')),
     url(r'^usuarios/', include('apps.usuarios.urls')),
     url(r'^home', home),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^api/ticket/', include('apps.soporte.url_api')),
+    url(r'^.*', dashboard, name='dashboard'),
 ]

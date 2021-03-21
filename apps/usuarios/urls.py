@@ -1,6 +1,4 @@
-
 from django.conf.urls import url
-from django.views.generic import TemplateView
 from apps.usuarios.views import user_login, logout_user
 
 urlpatterns = [
